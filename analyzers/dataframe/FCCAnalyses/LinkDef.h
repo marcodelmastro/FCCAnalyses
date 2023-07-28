@@ -33,6 +33,8 @@
 #pragma link C++ class ROOT::VecOps::RVec<ROOT::VecOps::RVec<FCCAnalyses::VertexingUtils::FCCAnalysesVertex>>+;
 #pragma link C++ class ROOT::VecOps::RVec<ROOT::VecOps::RVec<TVector3>>+;
 #pragma link C++ class ROOT::VecOps::RVec<ROOT::VecOps::RVec<TLorentzVector>>+;
+#pragma link C++ class FCCAnalyses::MCParticle::ZHZZ+;
+#pragma link C++ class ROOT::VecOps::RVec<FCCAnalyses::MCParticle::ZHZZ>+;
 
 //to load all other functions
 #pragma link C++ function dummyLoader;

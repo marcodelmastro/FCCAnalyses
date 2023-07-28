@@ -9,10 +9,82 @@
 #include "ROOT/RVec.hxx"
 #include "edm4hep/ReconstructedParticleData.h"
 #include "edm4hep/ParticleIDData.h"
+#include "fastjet/PseudoJet.hh"
 
 namespace FCCAnalyses{
 
+  
+
+
 namespace ReconstructedParticle{
+
+
+  //gives the angle between two tlv 
+  float get_angle_general(const TLorentzVector &tlv1, const TLorentzVector &tlv2);
+
+  //gives the angle between first jet and missing tlv and second jet and missing tlv => better to use get_angle_general directly
+  ROOT::VecOps::RVec<float> get_angle(const TLorentzVector &missing_tlv, const ROOT::VecOps::RVec<float> &e, const ROOT::VecOps::RVec<float> &px, const ROOT::VecOps::RVec<float> &py, const ROOT::VecOps::RVec<float> &pz);
+
+
+
+  //sums the two tlv of jets from Durham kt (N=2 as no need for a resobuilder)
+  TLorentzVector jetsum(const ROOT::VecOps::RVec<float> &e, const ROOT::VecOps::RVec<float> &px, const ROOT::VecOps::RVec<float> &py, const ROOT::VecOps::RVec<float> &pz); 
+
+
+  //structure in output of resoantikt
+  struct resoantiktstruc {
+    //method1 : Z1 (on-shell) = 1+2+ everything different from 3 and 4
+    TLorentzVector Z1;
+    //still method1 : Z2 (off-shell) = 3+4
+    TLorentzVector Z2;
+    //method 2 : Z1 = 1 + 2
+    TLorentzVector Z1_1_2; 
+    //method 3 : Z1 = 1+2+ every jet closer to 1 or 2 than to 3 or 4 (3 and 4 are for the off-shell)
+    TLorentzVector Z1_reco;
+  };
+
+  //function reconstructing the Zs with the jets from Durham anti-kt 
+  
+  resoantiktstruc resoantikt(const ROOT::VecOps::RVec<float> &e, const ROOT::VecOps::RVec<float> &px, const ROOT::VecOps::RVec<float> &py, const ROOT::VecOps::RVec<float> &pz, int Njets5, const ROOT::VecOps::RVec<float> &theta);
+
+  //counts the number of jets above a certain energy threshold
+  int countNjets(const ROOT::VecOps::RVec<float> &energy, float threshold);
+  
+  //structure in ouptput of myresoBuilder
+  struct resostructure {
+    //tlv of the dijet pair reconstructed as the one with mjj closest to mZ
+    TLorentzVector Z1;
+    //tlv of the dijet pair left
+    TLorentzVector Z2;
+    //vector containing in first and second entries the flavors of the two jets of the Z1
+    ROOT::VecOps::RVec<int> flav1;
+    //vector containing in first and second entries the flavors of the two jets of the Z2
+    ROOT::VecOps::RVec<int> flav2;
+    //vector containing in first and second entries the etas of the two jets of the Z1
+    ROOT::VecOps::RVec<float> etaZ1;
+    //vector containing in first and second entries the etas of the two jets of the Z2
+    ROOT::VecOps::RVec<float> etaZ2;
+    ROOT::VecOps::RVec<float> angulardiff;
+    ROOT::VecOps::RVec<int> jetmember;
+  };
+
+
+
+  // 
+  resostructure myresoBuilder(const ROOT::VecOps::RVec<float> &e, const ROOT::VecOps::RVec<float> &px, const ROOT::VecOps::RVec<float> &py, const ROOT::VecOps::RVec<float> &pz, const ROOT::VecOps::RVec<float> &flavour, const ROOT::VecOps::RVec<float> &flavourgm, const ROOT::VecOps::RVec<float> &eta_jets, const ROOT::VecOps::RVec<float> &theta, const ROOT::VecOps::RVec<float> &phi);
+ 
+ 
+  struct sameflavour {
+    sameflavour();
+    ROOT::VecOps::RVec<float> operator() (float part1, float part2, float part3, float part4);
+  };
+
+  struct mass_order {
+    float mass; 
+    mass_order(float arg_mass);
+    ROOT::VecOps::RVec<TLorentzVector> operator() (ROOT::VecOps::RVec<float> m, ROOT::VecOps::RVec<float> px, ROOT::VecOps::RVec<float> py, ROOT::VecOps::RVec<float> pz, ROOT::VecOps::RVec<float> e );
+  };
+
 
   /// build the resonance from 2 particles from an arbitrary list of input ReconstructedPartilces. Keep the closest to the mass given as input
   struct resonanceBuilder {
@@ -20,6 +92,24 @@ namespace ReconstructedParticle{
     resonanceBuilder(float arg_resonance_mass);
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> operator()(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> legs);
   };
+
+ 
+
+  //ROOT::VecOps::RVec<bool> findZleptons(const ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>& legs);
+  ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> findZleptons(const ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>& legs);
+
+
+
+  /// build the resonance from N particles from an arbitrary list of input PseudoJets.
+  /// Keep the closest to the mass given as input (strategy=1) or use the first 2 jets (strategy=2) or return all combinations (strategy=3)
+  struct multijetResonanceBuilder {
+    float m_resonance_mass;
+    int m_nlegs;
+    int m_strategy;
+    multijetResonanceBuilder(float arg_resonance_mass, int nlegs=2, int strategy=1);
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> operator()(const ROOT::VecOps::RVec<fastjet::PseudoJet>& legs);
+  };
+
 
   /// build the recoil from an arbitrary list of input ReconstructedPartilces and the center of mass energy
   struct recoilBuilder {
@@ -34,6 +124,7 @@ namespace ReconstructedParticle{
     int m_delta = 0;
     float operator() (ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> in) ;
   };
+
 
   /// select ReconstructedParticles with transverse momentum greater than a minimum value [GeV]
   struct sel_pt {
@@ -135,6 +226,9 @@ namespace ReconstructedParticle{
 
 	/// return visible 4-momentum vector
   TLorentzVector get_P4vis(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> in);
+
+  /// return a 4-momentum vector
+  TLorentzVector get_tlv_easy(float e, float px, float py, float pz);
 
   /// concatenate both input vectors and return the resulting vector
   ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> merge(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> x, ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> y);

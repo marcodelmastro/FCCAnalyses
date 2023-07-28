@@ -9,6 +9,8 @@ get_pseudoJets(const JetClustering::FCCAnalysesJet &jets) {
   return jets.jets;
 }
 
+
+
 std::vector<std::vector<int>>
 get_constituents(const JetClustering::FCCAnalysesJet &jets) {
   return jets.constituents;
@@ -158,6 +160,17 @@ get_theta(const ROOT::VecOps::RVec<fastjet::PseudoJet> &in) {
   return result;
 }
 
+ ROOT::VecOps::RVec<float> get_y(const ROOT::VecOps::RVec<fastjet::PseudoJet>& in){
+      ROOT::VecOps::RVec<float> result;
+      for (auto & p: in) {
+        float E = p.E();
+        float pL = p.pz();
+        float rapidity = 0.5*log((E+pL)/(E-pL));
+        result.push_back(rapidity);
+      }
+      return result;
+    }
+
 sel_pt::sel_pt(float arg_min_pt) : m_min_pt(arg_min_pt){};
 ROOT::VecOps::RVec<fastjet::PseudoJet>
 sel_pt::operator()(ROOT::VecOps::RVec<fastjet::PseudoJet> in) {
@@ -171,6 +184,28 @@ sel_pt::operator()(ROOT::VecOps::RVec<fastjet::PseudoJet> in) {
   }
   return result;
 }
+
+  int get_n(const ROOT::VecOps::RVec<fastjet::PseudoJet> & in) {
+      int result =  in.size();
+      return result;
+    }
+
+    //JetClusteringUtils::
+    sel_p::sel_p(float arg_min_p, float arg_max_p) : m_min_p(arg_min_p), m_max_p(arg_max_p) {};
+    ROOT::VecOps::RVec<fastjet::PseudoJet>  sel_p::operator() (const ROOT::VecOps::RVec<fastjet::PseudoJet> & in) {
+      ROOT::VecOps::RVec<fastjet::PseudoJet> result;
+      result.reserve(in.size());
+      for (size_t i = 0; i < in.size(); ++i) {
+        auto & p = in[i];
+        float momentum = std::sqrt(  std::pow(p.px(),2)
+                                   + std::pow(p.py(),2)
+                                   + std::pow(p.pz(),2) );
+        if ( momentum > m_min_p && momentum < m_max_p ) {
+          result.emplace_back(p);
+        }
+      }
+      return result;
+    }
 
 JetClustering::FCCAnalysesJet initialise_FCCAnalysesJet() {
   JetClustering::FCCAnalysesJet result;

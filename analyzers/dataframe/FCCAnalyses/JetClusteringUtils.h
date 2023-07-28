@@ -78,6 +78,10 @@ namespace FCCAnalyses {
     /** Get jet eta. Details. */
     ROOT::VecOps::RVec<float> get_eta(const ROOT::VecOps::RVec<fastjet::PseudoJet>& in);
 
+    /** Get jet y. Details. */
+    ROOT::VecOps::RVec<float> get_y(const ROOT::VecOps::RVec<fastjet::PseudoJet>& in);
+
+
     /** Get jet phi. Details (range [0,2*pi]). */
     ROOT::VecOps::RVec<float> get_phi(const ROOT::VecOps::RVec<fastjet::PseudoJet>& in);
 
@@ -94,6 +98,17 @@ namespace FCCAnalyses {
       float m_min_pt = 1.; //> transverse momentum threshold [GeV]
       ROOT::VecOps::RVec<fastjet::PseudoJet>  operator() (ROOT::VecOps::RVec<fastjet::PseudoJet> in);
     };
+
+    /// return the size of the input collection
+    int get_n(const ROOT::VecOps::RVec<fastjet::PseudoJet>& in);
+
+    struct sel_p {
+      sel_p(float arg_min_p, float arg_max_p = 1e10);
+      float m_min_p = 1.; //> momentum threshold [GeV]
+      float m_max_p = 1e10; //< momentum threshold [GeV]
+      ROOT::VecOps::RVec<fastjet::PseudoJet>  operator() (const ROOT::VecOps::RVec<fastjet::PseudoJet>& in);
+    };
+
 
     ///Internal methods
     JetClustering::FCCAnalysesJet initialise_FCCAnalysesJet();
