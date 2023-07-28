@@ -1,0 +1,52 @@
+imax 3
+jmax 7
+kmax 0
+---------------
+shapes			signal		lljjvv1  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumSignal_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			ZZ  		lljjvv1	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/ZZnorm_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			WW  		lljjvv1	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/WWnorm_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			HWW		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumHWW_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hbb		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumHbb_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Htautau		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumHtautau_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hgg		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumHgg_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hother		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/SumHother_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			data_obs 	lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/woutfilter_score_6classes_lljjvv/Sum_sel0_myScore_new_zoom.root myScore_new_zoom
+
+
+
+shapes 			signal		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumSignal_sel0_myScore_new_zoom.root myScore_new_zoom		
+shapes 			ZZ		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/ZZnorm_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			WW		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/WWnorm_sel0_myScore_new_zoom.root myScore_new_zoom	
+shapes 			HWW		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumHWW_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hbb		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumHbb_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Htautau		llvvjj  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumHtautau_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hgg		llvvjj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumHgg_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hother		llvvjj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/SumHother_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			data_obs	llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/woutfilter_score_6classes_llvvjj/Sum_sel0_myScore_new_zoom.root myScore_new_zoom	
+
+
+shapes 			signal		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumSignal_sel0_myScore_new_zoom.root myScore_new_zoom		
+shapes 			ZZ		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/ZZnorm_sel0_myScore_new_zoom.root myScore_new_zoom	
+shapes 			HWW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHWW_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hbb		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHbb_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			WW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/WWnorm_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes			Htautau		vvlljj  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHtautau_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hgg		vvlljj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHgg_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hother		vvlljj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHother_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			data_obs	vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/Sum_sel0_myScore_new_zoom.root myScore_new_zoom
+
+
+
+---------------
+---------------
+bin            lljjvv1		llvvjj		vvlljj		
+observation    -1		-1		-1
+------------------------------
+bin		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv1		llvvjj		llvvjj		llvvjj		llvvjj		llvvjj		llvvjj		llvvjj		llvvjj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj	
+process      	signal  	HWW		ZZ		Hbb		WW		Htautau		Hgg		Hother		signal		HWW		ZZ		Hbb		WW		Htautau		Hgg		Hother		signal		HWW		ZZ		Hbb		WW		Htautau		Hgg		Hother
+process     	0 		1		2		3		4   		5		6		7		0		1		2		3		4		5		6		7		0		1		2		3		4		5		6		7
+rate	     	-1		-1        	-1 		-1		-1		-1		-1		-1		-1		-1	   	-1		-1		-1		-1		-1		-1		-1		-1		-1		-1		-1		-1		-1		-1			
+
+
+			
+------------------------------

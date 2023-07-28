@@ -1,0 +1,36 @@
+imax 2
+jmax 4
+kmax 2
+
+
+shapes			signal		lljjvv1  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumSignal_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			ZZ  		lljjvv1	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/ZZnorm_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			WW  		lljjvv1	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/WWnorm_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			HWW		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumHWW_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+ shapes 		Hbb		lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumHbb_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			data_obs 	lljjvv1 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/Sum_sel11_secondZ_m_centered_2.root secondZ_m_centered_2
+
+shapes			signal		lljjvv2  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumSignal_sel13_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			ZZ  		lljjvv2	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/ZZnorm_sel13_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			WW  		lljjvv2	 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/WWnorm_sel13_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			HWW		lljjvv2 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumHWW_sel13_secondZ_m_centered_2.root secondZ_m_centered_2
+ shapes 		Hbb		lljjvv2 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/SumHbb_sel13_secondZ_m_centered_2.root secondZ_m_centered_2
+shapes 			data_obs 	lljjvv2 ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/lljjvv/final/smear_sf_2_5/Sum_sel13_secondZ_m_centered_2.root secondZ_m_centered_2		
+
+---------------
+--------------- 
+
+bin		lljjvv1		lljjvv2
+observation	-1		-1
+
+------------------------------
+bin		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv1		lljjvv2		lljjvv2		lljjvv2       lljjvv2	      lljjvv2
+process		signal		ZZ		HWW		Hbb		WW		signal		ZZ		HWW	      Hbb	      WW
+process 	0		1		2		3		4		0		1		2	      3		      4
+rate		-1		-1		-1		-1		-1		-1		-1		-1	      -1	      -1
+
+------------------------------
+normZZ	lnN	- 		1.10		-		-		-		1.10		-	      -		      -		      -
+normHWW	lnN	-		-		1.05		-		-		-		1.05	      -		      -               -
+
+

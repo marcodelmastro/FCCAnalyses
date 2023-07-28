@@ -1,0 +1,27 @@
+imax 1
+jmax 4
+kmax 2
+
+
+shapes 			signal		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/SumSignal_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered		
+shapes 			ZZ		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/ZZnorm_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered	
+shapes 			HWW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/SumHWW_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered
+shapes 			Hbb		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/SumHbb_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered
+shapes 			WW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/WWnorm_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered
+shapes 			data_obs	vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/smear_sf_2_5/Sum_sel8_new_visible_mass_predef_centered.root new_visible_mass_predef_centered		
+
+---------------
+--------------- 
+
+bin		vvlljj
+observation	-1
+
+------------------------------
+bin		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj
+process		signal		ZZ		HWW		Hbb		WW
+process 	0		1		2		3		4
+rate		-1		-1		-1		-1		-1
+
+------------------------------
+normZZ	lnN	- 		1.10		-		-		-
+normHWW	lnN	-		-		1.05		-		-

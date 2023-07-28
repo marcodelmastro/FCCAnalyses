@@ -1,0 +1,27 @@
+imax 1
+jmax 4
+kmax 2
+
+
+shapes 			signal		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/SumSignal_sel7_secondZ_m_45.root secondZ_m_45		
+shapes 			ZZ		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/ZZnorm_sel7_secondZ_m_45.root secondZ_m_45
+shapes 			WW		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/WWnorm_sel7_secondZ_m_45.root secondZ_m_45	
+shapes 			HWW		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/SumHWW_sel7_secondZ_m_45.root secondZ_m_45
+shapes 			Hbb		llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/SumHbb_sel7_secondZ_m_45.root secondZ_m_45
+shapes 			data_obs	llvvjj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/llvvjj/final/smear_sf_2_5/Sum_sel7_secondZ_m_45.root secondZ_m_45		
+
+---------------
+--------------- 
+
+bin		llvvjj
+observation	-1
+
+------------------------------
+bin		llvvjj		llvvjj		llvvjj		llvvjj		llvvjj
+process		signal		ZZ		HWW		Hbb		WW
+process 	0		1		2		3		4
+rate		-1		-1		-1		-1		-1
+
+------------------------------
+normZZ	lnN	- 		1.10		-		-		-
+normHWW	lnN	-		-		1.05		- 		-

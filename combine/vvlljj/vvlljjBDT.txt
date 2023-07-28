@@ -1,0 +1,30 @@
+imax 1
+jmax 7
+kmax 2
+
+
+shapes 			signal		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumSignal_sel0_myScore_new_zoom.root myScore_new_zoom		
+shapes 			ZZ		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/ZZnorm_sel0_myScore_new_zoom.root myScore_new_zoom	
+shapes 			HWW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHWW_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			Hbb		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHbb_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			WW		vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/WWnorm_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes			Htautau		vvlljj  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHtautau_sel0_myScore_new_zoom.root myScore_new_zoom
+ shapes 		Hgg		vvlljj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHgg_sel0_myScore_new_zoom.root myScore_new_zoom
+ shapes 		Hother		vvlljj ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/SumHother_sel0_myScore_new_zoom.root myScore_new_zoom
+shapes 			data_obs	vvlljj	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/neutrinos/vvlljj/final/woutfilter_score_6classes_vvlljj/Sum_sel0_myScore_new_zoom.root myScore_new_zoom		
+
+---------------
+--------------- 
+
+bin		vvlljj
+observation	-1
+
+------------------------------
+bin		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj		vvlljj        vvlljj    
+process		signal		ZZ		HWW		Hbb		WW		Htautau	       	Hgg           Hother	      
+process 	0		1		2		3		4		5	      	6      	      7 
+rate		-1		-1		-1		-1		-1		-1		-1	      -1	     	   
+
+------------------------------
+normZZ	lnN	- 		1.10		-		-		-		-		-	      -	       			      	     	 
+normHWW	lnN	-		-		1.05		-		-		-		-	       -		 	                   

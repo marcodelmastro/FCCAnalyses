@@ -1,0 +1,33 @@
+imax 1
+jmax 7
+kmax 3
+
+
+shapes 			signal		channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumSignal_sel7_firstZ_m.root firstZ_m		
+shapes 			ZZ		channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/ZZnorm_sel7_firstZ_m.root firstZ_m
+shapes 			WW		channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/WWnorm_sel7_firstZ_m.root firstZ_m	
+shapes 			HWW		channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumHWW_sel7_firstZ_m.root firstZ_m
+shapes 			Hbb		channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumHbb_sel7_firstZ_m.root firstZ_m
+shapes 			Htautau		channel  ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumHtautau_sel7_firstZ_m.root firstZ_m
+ shapes 		Hgg		channel ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumHgg_sel7_firstZ_m.root firstZ_m
+ shapes 		Hother		channel ../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/SumHother_sel7_firstZ_m.root firstZ_m
+shapes 			data_obs	channel	../../FCCAnalyses/outputs/fccee/higgs/mH-recoil/hzz/final/4jets/Zleptonique/woutfilter/Sum_sel7_firstZ_m.root firstZ_m		
+
+---------------
+--------------- 
+
+bin		channel
+observation	-1
+
+------------------------------
+bin		channel		channel		channel		channel		channel		channel		channel        channel    
+process		signal		ZZ		HWW		Hbb		WW		Htautau	       	Hgg           Hother	      
+process 	0		1		2		3		4		5	      	6      	      7 
+rate		-1		-1		-1		-1		-1		-1		-1	      -1	     	   
+
+------------------------------
+normZZ	lnN	- 		1.10		-		-		-		-		-	      -	       			      	     	 
+normHWW	lnN	-		-		1.05		-		-		-		-	       -		 
+normWW	lnN	-		-		-		-		1.10		-		-	       -		 	                   
+
+
